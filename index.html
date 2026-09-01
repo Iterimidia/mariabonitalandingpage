@@ -93,11 +93,11 @@
   nav.wrap{ display:flex; align-items:center; justify-content:space-between; padding-block:.85rem; gap:1.5rem; }
 
   .brand{ display:flex; align-items:center; gap:.7rem; }
-  .monogram{ width:40px; height:40px; border-radius:50%; background:var(--ink); position:relative; flex-shrink:0; }
-  .monogram span{ position:absolute; top:50%; font-family:var(--display); font-weight:700; font-size:1rem; transform:translateY(-50%); color:var(--white); }
+  .monogram{ width:40px; height:40px; border-radius:50%; background:var(--white); border:1.5px solid var(--gold-deep); position:relative; flex-shrink:0; }
+  .monogram span{ position:absolute; top:50%; font-family:var(--display); font-weight:700; font-size:1rem; transform:translateY(-50%); color:var(--ink); }
   .monogram .m{ left:9px; }
-  .monogram .b{ right:8px; color:var(--gold); }
-  .monogram .dot{ position:absolute; width:3px; height:3px; border-radius:50%; background:var(--gold); top:8px; left:50%; transform:translateX(-50%); }
+  .monogram .b{ right:8px; color:var(--gold-deep); }
+  .monogram .dot{ position:absolute; width:3px; height:3px; border-radius:50%; background:var(--gold-deep); top:8px; left:50%; transform:translateX(-50%); }
   .brand-name{ display:flex; flex-direction:column; line-height:1.2; }
   .brand-name strong{ font-family:var(--display); font-weight:700; font-size:.98rem; color:var(--ink); }
   .brand-name small{ font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-muted); }
@@ -121,6 +121,7 @@
   .hero{ position:relative; min-height:78vh; display:flex; align-items:center; padding-block:clamp(2.5rem,6vh,4rem); overflow:hidden; }
   .hero-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2.5rem,6vw,5rem); align-items:center; width:100%; }
   .hero-photo{ position:relative; aspect-ratio:4/5; }
+  @media (min-width:981px){ .hero-photo{ margin-right:calc(-1 * clamp(1.25rem,5vw,3.5rem)); } }
   .hero-photo .frame{ position:relative; z-index:1; width:100%; height:100%; border-radius:var(--r-lg); background:var(--beige); overflow:hidden; box-shadow:var(--shadow-lift); }
   .hero-photo .frame img{ width:100%; height:100%; object-fit:cover; object-position:center 18%; }
   .hero-photo::before{
@@ -141,10 +142,10 @@
   @keyframes riseIn{ from{ opacity:0; transform:translateY(16px);} to{ opacity:1; transform:translateY(0);} }
 
   /* ---------- marquee ---------- */
-  .marquee{ background:var(--ink); overflow:hidden; padding-block:.85rem; }
+  .marquee{ background:var(--beige); border-block:1px solid var(--beige-line); overflow:hidden; padding-block:.85rem; }
   .marquee-track{ display:flex; width:max-content; gap:2.5rem; animation:scrollLeft 34s linear infinite; }
-  .marquee-track span{ font-size:.76rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--white); white-space:nowrap; }
-  .marquee-track span::after{ content:'\2726'; margin-left:2.5rem; color:var(--gold); font-size:.6rem; }
+  .marquee-track span{ font-size:.76rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); white-space:nowrap; }
+  .marquee-track span::after{ content:'\2726'; margin-left:2.5rem; color:var(--gold-deep); font-size:.6rem; }
   @keyframes scrollLeft{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
 
   section{ padding-block:var(--space-6); position:relative; }
@@ -193,7 +194,11 @@
   .feature-body{ padding:var(--space-4); }
   .feature-card h3{ font-size:1.5rem; margin-bottom:.6rem; }
   .feature-card p{ color:var(--ink-muted); font-size:.94rem; }
-  .feature-card .price{ display:block; margin-top:1.2rem; font-size:1.5rem; font-weight:700; color:var(--wine); font-variant-numeric:tabular-nums; }
+  .feature-card .price{ display:block; margin-top:1.2rem; font-size:1.5rem; font-weight:700; color:var(--gold-darker); font-variant-numeric:tabular-nums; }
+  .feature-card .ideal{ display:block; margin-top:1rem; font-size:.85rem; color:var(--ink-muted); }
+  .feature-card .ideal strong{ color:var(--ink); font-weight:700; }
+  .fine-note{ display:flex; align-items:flex-start; gap:.6rem; margin-top:var(--space-4); font-size:.82rem; font-style:italic; color:var(--ink-muted); }
+  .fine-note svg{ flex-shrink:0; margin-top:.15rem; color:var(--gold-deep); }
 
   .service-list{ margin-top:var(--space-5); border-top:1px solid var(--beige-line); }
   .service-row{ display:grid; grid-template-columns:1fr 2fr auto; align-items:center; gap:1.5rem; padding:1.15rem 0; border-bottom:1px solid var(--beige-line); position:relative; }
@@ -242,19 +247,20 @@
   .stars{ color:var(--gold); font-size:.85rem; letter-spacing:.1em; }
 
   /* ---------- contato / cta final ---------- */
-  .cta-band{ background:linear-gradient(150deg, var(--ink) 0%, #171310 100%); color:var(--white); }
-  .cta-grid{ display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(2.5rem,5vw,4.5rem); align-items:center; }
-  .cta-message h2{ color:var(--white); font-size:clamp(1.9rem,3.6vw,2.5rem); }
-  .cta-message > p{ color:rgba(255,255,255,.68); margin-top:1rem; max-width:26rem; font-size:1rem; }
-  .cta-actions{ display:flex; flex-direction:column; align-items:flex-start; gap:.8rem; margin-top:1.8rem; }
-  .cta-actions .note{ font-size:.8rem; color:rgba(255,255,255,.55); }
+  .cta-section{ background:var(--beige); }
+  .cta-layout{ display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem,4.5vw,4rem); align-items:center; }
+  .cta-photo .frame{ position:relative; aspect-ratio:4/5; border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-card); }
+  .cta-message h2{ font-size:clamp(1.9rem,3.6vw,2.5rem); }
+  .cta-message > p{ color:var(--ink-muted); margin-top:1rem; max-width:26rem; font-size:1rem; }
+  .cta-actions{ display:flex; align-items:center; gap:1rem; margin-top:1.8rem; flex-wrap:wrap; }
+  .cta-actions .note{ display:inline-flex; align-items:center; gap:.4rem; font-size:.82rem; color:var(--ink-muted); }
+  .cta-actions .note svg{ color:var(--gold-deep); }
 
-  .info-list{ display:flex; flex-direction:column; gap:1.5rem; }
-  .info-list li{ display:flex; gap:1rem; align-items:flex-start; }
-  .info-list .credential-icon{ background:rgba(255,255,255,.08); color:var(--gold); }
-  .info-list strong{ display:block; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-bottom:.3rem; }
-  .info-list span, .info-list a.val{ color:var(--white); font-size:.98rem; font-weight:500; }
-  .info-list a.val:hover{ color:var(--gold); }
+  .info-row{ display:flex; flex-wrap:wrap; gap:1.8rem 2.4rem; margin-top:2.2rem; padding-top:2rem; border-top:1px solid var(--beige-line); }
+  .info-row li{ display:flex; gap:.85rem; align-items:flex-start; min-width:12rem; }
+  .info-row strong{ display:block; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-muted); margin-bottom:.3rem; }
+  .info-row span, .info-row a.val{ color:var(--ink); font-size:.95rem; font-weight:600; }
+  .info-row a.val:hover{ color:var(--gold-deep); }
 
   .fab{
     position:fixed; right:clamp(1.1rem,3vw,1.8rem); bottom:clamp(1.1rem,3vw,1.8rem); z-index:70;
@@ -269,8 +275,6 @@
   @media (max-width:560px){ .fab span{ display:none; } .fab{ padding:.85rem; } }
 
   footer.site{ background:var(--ink); padding-block:var(--space-4); }
-  footer.site .monogram{ background:var(--white); }
-  footer.site .monogram .m{ color:var(--ink); }
   .foot-grid{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; }
   .foot-links{ display:flex; gap:1.6rem; flex-wrap:wrap; }
   .foot-links a{ font-size:.85rem; color:rgba(255,255,255,.65); transition:color .25s ease; }
@@ -285,7 +289,8 @@
     .hero-grid{ grid-template-columns:1fr; }
     .hero-grid > div:last-child{ max-width:320px; margin-inline:auto; }
     .sobre-grid{ grid-template-columns:1fr; gap:2.5rem; }
-    .cta-grid{ grid-template-columns:1fr; }
+    .cta-layout{ grid-template-columns:1fr; }
+    .cta-photo{ max-width:340px; margin-inline:auto; }
     .featured{ grid-template-columns:1fr; }
     .products{ grid-template-columns:repeat(2,1fr); }
     .testimonials{ grid-template-columns:1fr; }
@@ -337,7 +342,7 @@
       <li><a href="#galeria">Resultados</a></li>
       <li><a href="#depoimentos">Avaliações</a></li>
       <li><a href="#contato">Contato</a></li>
-      <li><a href="https://wa.me/5511974205509" target="_blank" rel="noopener" class="btn btn-solid">Agendar</a></li>
+      <li><a href="https://wa.me/5511974205509" target="_blank" rel="noopener" class="btn btn-solid"><svg width="15" height="15" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5h5l2 6-3 2c1.3 3 3.7 5.4 6.7 6.7l2-3 6 2v5c0 1.7-1.5 3-3.2 2.8C13.6 25.2 6.8 18.4 5.2 8.7 5 7 6.3 5.5 8 5.5z"/></svg>Agendar</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -351,9 +356,9 @@
       <div>
         <span class="eyebrow hero-eyebrow">Cabeleireira · Cabreúva, SP</span>
         <h1>Luz, técnica e cuidado em <em>cada mecha</em>.</h1>
-        <p class="hero-sub">Especialista em mechas, iluminados e alisamento. A referência em transformação capilar aqui em Cabreúva.</p>
+        <p class="hero-sub">Especialista em mechas e loiros que realçam sua beleza com naturalidade e sofisticação. Transformações capilares com saúde, brilho e um atendimento que faz você se sentir única.</p>
         <div class="hero-actions">
-          <a href="https://wa.me/5511974205509" target="_blank" rel="noopener" class="btn btn-solid">Agendar pelo WhatsApp</a>
+          <a href="https://wa.me/5511974205509" target="_blank" rel="noopener" class="btn btn-solid"><svg width="15" height="15" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5h5l2 6-3 2c1.3 3 3.7 5.4 6.7 6.7l2-3 6 2v5c0 1.7-1.5 3-3.2 2.8C13.6 25.2 6.8 18.4 5.2 8.7 5 7 6.3 5.5 8 5.5z"/></svg>Agendar pelo WhatsApp</a>
           <a href="#servicos" class="btn btn-ghost">Ver especialidades</a>
           <span class="rating-badge"><span class="stars">★★★★★</span> <strong>5,0</strong> · 33 avaliações no Facebook</span>
         </div>
@@ -424,6 +429,7 @@
           <h3>Mechas &amp; Iluminados</h3>
           <p>Transição natural, luz onde o rosto pede e técnica pensada para não agredir o fio. A assinatura que virou marca registrada da Lu na região.</p>
           <span class="price">a partir de R$ ––</span>
+          <span class="ideal"><strong>Para quem é ideal:</strong> quem busca luz no rosto com naturalidade.</span>
           </div>
         </div>
         <div class="feature-card" data-reveal>
@@ -435,9 +441,11 @@
           <h3>Alisamento</h3>
           <p>Fios lisos, leves e com brilho de verdade, sempre avaliando a saúde do cabelo antes de qualquer processo.</p>
           <span class="price">a partir de R$ ––</span>
+          <span class="ideal"><strong>Para quem é ideal:</strong> quem quer liso natural sem perder o movimento.</span>
           </div>
         </div>
       </div>
+      <p class="fine-note"><svg width="15" height="15" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="12"/><path d="M16 14v8M16 10v.5"/></svg> Todos os serviços incluem diagnóstico, proteção dos fios e finalização personalizada. Valores podem variar conforme comprimento e volume do cabelo.</p>
 
       <div class="list-head"><span>Também no salão</span></div>
       <div class="service-list">
@@ -513,7 +521,7 @@
           <span class="eyebrow">Resultados reais</span>
           <h2>Transformações que falam por si.</h2>
         </div>
-        <a href="https://instagram.com/mariabonitacabreuva" target="_blank" rel="noopener" class="btn btn-ghost">Ver mais no Instagram</a>
+        <a href="https://instagram.com/mariabonitacabreuva" target="_blank" rel="noopener" class="btn btn-ghost"><svg width="15" height="15" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="24" height="24" rx="6"/><circle cx="16" cy="16" r="6"/><circle cx="23" cy="9" r="1.4" fill="currentColor" stroke="none"/></svg>Ver mais no Instagram</a>
       </div>
       <div class="transform-list" style="margin-top:var(--space-5)">
         <div class="t-row" data-reveal>
@@ -563,35 +571,34 @@
     </div>
   </section>
 
-  <section id="contato" class="cta-band">
-    <div class="wrap cta-grid">
+  <section id="contato" class="cta-section">
+    <div class="wrap cta-layout">
+      <div class="cta-photo" data-reveal>
+        <div class="frame"><div class="placeholder" data-label="Foto do salão"></div></div>
+      </div>
       <div class="cta-message" data-reveal>
-        <span class="eyebrow" style="color:var(--gold)">Agendamento</span>
+        <span class="eyebrow">Agendamento</span>
         <h2>Pronta para realçar sua melhor versão?</h2>
         <p>Agende seu horário e viva a experiência Maria Bonita.</p>
         <div class="cta-actions">
-          <a href="https://wa.me/5511974205509" target="_blank" rel="noopener" class="btn btn-solid">Agendar pelo WhatsApp</a>
-          <span class="note">Resposta rápida e atendimento humanizado</span>
+          <a href="https://wa.me/5511974205509" target="_blank" rel="noopener" class="btn btn-solid"><svg width="15" height="15" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5h5l2 6-3 2c1.3 3 3.7 5.4 6.7 6.7l2-3 6 2v5c0 1.7-1.5 3-3.2 2.8C13.6 25.2 6.8 18.4 5.2 8.7 5 7 6.3 5.5 8 5.5z"/></svg>Agendar pelo WhatsApp</a>
+          <span class="note"><svg width="14" height="14" viewBox="0 0 32 32" fill="currentColor"><path d="M18 2L4 18h9l-3 12 16-18h-10z"/></svg> Resposta rápida e atendimento humanizado</span>
         </div>
+        <ul class="info-row">
+          <li>
+            <span class="credential-icon"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 28s10-9 10-16a10 10 0 10-20 0c0 7 10 16 10 16z"/><circle cx="16" cy="12" r="3.5"/></svg></span>
+            <div><strong>Endereço</strong><span>Rua Minas Gerais, 1043, Cabreúva/SP</span></div>
+          </li>
+          <li>
+            <span class="credential-icon"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5h5l2 6-3 2c1.3 3 3.7 5.4 6.7 6.7l2-3 6 2v5c0 1.7-1.5 3-3.2 2.8C13.6 25.2 6.8 18.4 5.2 8.7 5 7 6.3 5.5 8 5.5z"/></svg></span>
+            <div><strong>WhatsApp</strong><a class="val" href="https://wa.me/5511974205509" target="_blank" rel="noopener">(11) 97420-5509</a></div>
+          </li>
+          <li>
+            <span class="credential-icon"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="24" height="24" rx="6"/><circle cx="16" cy="16" r="6"/><circle cx="23" cy="9" r="1.4" fill="currentColor" stroke="none"/></svg></span>
+            <div><strong>Instagram</strong><a class="val" href="https://instagram.com/mariabonitacabreuva" target="_blank" rel="noopener">@mariabonitacabreuva</a></div>
+          </li>
+        </ul>
       </div>
-      <ul class="info-list" data-reveal>
-        <li>
-          <span class="credential-icon"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 28s10-9 10-16a10 10 0 10-20 0c0 7 10 16 10 16z"/><circle cx="16" cy="12" r="3.5"/></svg></span>
-          <div><strong>Endereço</strong><span>Rua Minas Gerais, 1043, Bairro Jacaré, Cabreúva/SP</span></div>
-        </li>
-        <li>
-          <span class="credential-icon"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5h5l2 6-3 2c1.3 3 3.7 5.4 6.7 6.7l2-3 6 2v5c0 1.7-1.5 3-3.2 2.8C13.6 25.2 6.8 18.4 5.2 8.7 5 7 6.3 5.5 8 5.5z"/></svg></span>
-          <div><strong>WhatsApp</strong><a class="val" href="https://wa.me/5511974205509" target="_blank" rel="noopener">(11) 97420-5509</a></div>
-        </li>
-        <li>
-          <span class="credential-icon"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="24" height="24" rx="6"/><circle cx="16" cy="16" r="6"/><circle cx="23" cy="9" r="1.4" fill="currentColor" stroke="none"/></svg></span>
-          <div><strong>Instagram</strong><a class="val" href="https://instagram.com/mariabonitacabreuva" target="_blank" rel="noopener">@mariabonitacabreuva</a></div>
-        </li>
-        <li>
-          <span class="credential-icon"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/></svg></span>
-          <div><strong>Horário</strong><span>[a confirmar com a Lu]</span></div>
-        </li>
-      </ul>
     </div>
   </section>
 </main>
