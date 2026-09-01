@@ -12,7 +12,7 @@
 <meta property="og:description" content="Especialista em mechas, iluminados e alisamento. Nota 5,0 no Facebook, 33 avaliações.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400..700;1,400..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#F7F3EC;
@@ -28,7 +28,7 @@
     --ink:#211B16;
     --ink-muted:#6B5F52;
 
-    --display:'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --display:'Fraunces', Georgia, 'Times New Roman', serif;
     --sans:'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
     --r-sm:10px;
@@ -59,11 +59,11 @@
   img,svg{ display:block; max-width:100%; }
   a{ color:inherit; text-decoration:none; }
   ul{ list-style:none; margin:0; padding:0; }
-  h1,h2,h3{ font-family:var(--display); font-weight:700; margin:0; letter-spacing:-.01em; text-wrap:balance; }
+  h1,h2,h3{ font-family:var(--display); font-weight:600; margin:0; letter-spacing:-.01em; text-wrap:balance; }
   p{ margin:0; }
   button{ font-family:inherit; cursor:pointer; background:none; border:none; }
   :focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; }
-  em{ font-style:italic; color:var(--gold-deep); font-weight:600; }
+  em{ font-family:var(--display); font-style:italic; color:var(--gold-deep); font-weight:500; }
 
   .wrap{ max-width:var(--max); margin-inline:auto; padding-inline:clamp(1.25rem,5vw,3.5rem); }
 
@@ -141,13 +141,6 @@
 
   @keyframes riseIn{ from{ opacity:0; transform:translateY(16px);} to{ opacity:1; transform:translateY(0);} }
 
-  /* ---------- marquee ---------- */
-  .marquee{ background:var(--beige); border-block:1px solid var(--beige-line); overflow:hidden; padding-block:.85rem; }
-  .marquee-track{ display:flex; width:max-content; gap:2.5rem; animation:scrollLeft 34s linear infinite; }
-  .marquee-track span{ font-size:.76rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); white-space:nowrap; }
-  .marquee-track span::after{ content:'\2726'; margin-left:2.5rem; color:var(--gold-deep); font-size:.6rem; }
-  @keyframes scrollLeft{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
-
   section{ padding-block:var(--space-6); position:relative; }
   .section-beige{ background:var(--beige); }
   section > .wrap{ position:relative; z-index:1; }
@@ -185,13 +178,12 @@
 
   /* ---------- serviços em destaque ---------- */
   .featured{ display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3); }
-  .feature-card{ background:var(--white); border-radius:var(--r-md); position:relative; overflow:hidden; box-shadow:var(--shadow-card); transition:transform .35s ease, box-shadow .35s ease; }
+  .feature-card{ display:grid; grid-template-columns:.85fr 1.15fr; background:var(--white); border-radius:var(--r-md); position:relative; overflow:hidden; box-shadow:var(--shadow-card); transition:transform .35s ease, box-shadow .35s ease; }
   .feature-card:hover{ transform:translateY(-5px); box-shadow:var(--shadow-lift); }
-  .feature-photo{ aspect-ratio:16/11; position:relative; overflow:hidden; }
-  .feature-photo img{ width:100%; height:100%; object-fit:cover; object-position:center 25%; transition:transform .7s ease; }
-  .feature-card:hover .feature-photo img{ transform:scale(1.06); }
+  .feature-photo{ position:relative; overflow:hidden; min-height:20rem; }
+  .feature-photo .placeholder{ position:absolute; inset:0; }
   .feature-photo .tag{ position:absolute; top:1.1rem; left:1.1rem; }
-  .feature-body{ padding:var(--space-4); }
+  .feature-body{ padding:var(--space-4); display:flex; flex-direction:column; justify-content:center; }
   .feature-card h3{ font-size:1.5rem; margin-bottom:.6rem; }
   .feature-card p{ color:var(--ink-muted); font-size:.94rem; }
   .feature-card .price{ display:block; margin-top:1.2rem; font-size:1.5rem; font-weight:700; color:var(--gold-darker); font-variant-numeric:tabular-nums; }
@@ -218,21 +210,12 @@
   .product .btn{ margin-top:1rem; width:100%; font-size:.72rem; padding:.7rem 1rem; }
 
   /* ---------- galeria ---------- */
-  .transform-list{ display:flex; flex-direction:column; gap:clamp(1.75rem,4vw,2.75rem); margin-bottom:var(--space-4); }
-  .t-row{ display:grid; grid-template-columns:6fr 5fr; gap:clamp(1.75rem,4vw,3.5rem); align-items:center; }
-  .t-row:nth-child(even){ grid-template-columns:5fr 6fr; }
-  .t-row:nth-child(even) .t-photo{ order:2; }
-  .t-row:nth-child(even) .t-text{ order:1; }
-  .t-photo{ aspect-ratio:5/4; border-radius:var(--r-md); overflow:hidden; box-shadow:var(--shadow-card); }
-  .t-photo img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s cubic-bezier(.2,.7,.2,1); }
-  .t-row:hover .t-photo img{ transform:scale(1.045); }
-  .t-text .eyebrow{ margin-bottom:.6rem; }
-  .t-text p{ font-family:var(--display); font-weight:600; font-size:clamp(1.15rem,2vw,1.4rem); color:var(--ink); line-height:1.35; max-width:20rem; }
-
-  .t-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:.9rem; }
-  .t-thumb{ position:relative; aspect-ratio:1/1; border-radius:var(--r-md); overflow:hidden; box-shadow:var(--shadow-card); }
-  .t-thumb img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease; }
-  .t-thumb:hover img{ transform:scale(1.08); }
+  .results-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; }
+  .result-item .result-photo{ display:grid; grid-template-columns:1fr 1fr; aspect-ratio:4/5; border-radius:var(--r-md); overflow:hidden; box-shadow:var(--shadow-card); transition:transform .35s ease, box-shadow .35s ease; }
+  .result-item:hover .result-photo{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
+  .result-photo .half{ position:relative; }
+  .result-photo .half + .half::before{ content:''; position:absolute; left:0; top:0; bottom:0; width:1px; background:rgba(255,255,255,.5); z-index:1; }
+  .result-caption{ margin-top:.8rem; text-align:center; font-size:.86rem; font-weight:600; color:var(--ink); }
 
   /* ---------- depoimentos ---------- */
   .rating-summary{ display:flex; align-items:center; gap:.6rem; font-size:.95rem; color:var(--ink-muted); }
@@ -248,7 +231,7 @@
 
   /* ---------- contato / cta final ---------- */
   .cta-section{ background:var(--beige); }
-  .cta-layout{ display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem,4.5vw,4rem); align-items:center; }
+  .cta-layout{ display:grid; grid-template-columns:.7fr 1.3fr; gap:clamp(2rem,4.5vw,4rem); align-items:center; }
   .cta-photo .frame{ position:relative; aspect-ratio:4/5; border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-card); }
   .cta-message h2{ font-size:clamp(1.9rem,3.6vw,2.5rem); }
   .cta-message > p{ color:var(--ink-muted); margin-top:1rem; max-width:26rem; font-size:1rem; }
@@ -292,13 +275,11 @@
     .cta-layout{ grid-template-columns:1fr; }
     .cta-photo{ max-width:340px; margin-inline:auto; }
     .featured{ grid-template-columns:1fr; }
+    .feature-card{ grid-template-columns:1fr; }
+    .feature-photo{ min-height:0; aspect-ratio:16/10; }
     .products{ grid-template-columns:repeat(2,1fr); }
     .testimonials{ grid-template-columns:1fr; }
-    .t-row, .t-row:nth-child(even){ grid-template-columns:1fr; }
-    .t-row:nth-child(even) .t-photo{ order:0; }
-    .t-row:nth-child(even) .t-text{ order:0; }
-    .t-text p{ max-width:none; }
-    .t-strip{ grid-template-columns:repeat(2,1fr); }
+    .results-strip{ grid-template-columns:repeat(2,1fr); }
     .service-row{ grid-template-columns:1fr auto; }
     .service-row p{ display:none; }
   }
@@ -314,7 +295,6 @@
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .hero-eyebrow,.hero h1,.hero-sub,.hero-actions{ animation:none; opacity:1; }
-    .marquee-track{ animation:none; }
     [data-reveal]{ opacity:1; transform:none; transition:none; }
   }
 </style>
@@ -342,7 +322,7 @@
       <li><a href="#galeria">Resultados</a></li>
       <li><a href="#depoimentos">Avaliações</a></li>
       <li><a href="#contato">Contato</a></li>
-      <li><a href="https://wa.me/5511974205509" target="_blank" rel="noopener" class="btn btn-solid"><svg width="15" height="15" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5h5l2 6-3 2c1.3 3 3.7 5.4 6.7 6.7l2-3 6 2v5c0 1.7-1.5 3-3.2 2.8C13.6 25.2 6.8 18.4 5.2 8.7 5 7 6.3 5.5 8 5.5z"/></svg>Agendar</a></li>
+      <li><a href="https://wa.me/5511974205509" target="_blank" rel="noopener" class="btn btn-solid"><svg width="15" height="15" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5h5l2 6-3 2c1.3 3 3.7 5.4 6.7 6.7l2-3 6 2v5c0 1.7-1.5 3-3.2 2.8C13.6 25.2 6.8 18.4 5.2 8.7 5 7 6.3 5.5 8 5.5z"/></svg>Agendar pelo WhatsApp</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -373,13 +353,6 @@
       </div>
     </div>
   </section>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Mechas</span><span>Iluminados</span><span>Alisamento</span><span>Saúde dos Fios</span><span>Corte</span><span>Especialista em Loiras</span>
-      <span>Mechas</span><span>Iluminados</span><span>Alisamento</span><span>Saúde dos Fios</span><span>Corte</span><span>Especialista em Loiras</span>
-    </div>
-  </div>
 
   <section id="sobre">
     <div class="wrap sobre-grid">
@@ -523,21 +496,35 @@
         </div>
         <a href="https://instagram.com/mariabonitacabreuva" target="_blank" rel="noopener" class="btn btn-ghost"><svg width="15" height="15" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="24" height="24" rx="6"/><circle cx="16" cy="16" r="6"/><circle cx="23" cy="9" r="1.4" fill="currentColor" stroke="none"/></svg>Ver mais no Instagram</a>
       </div>
-      <div class="transform-list" style="margin-top:var(--space-5)">
-        <div class="t-row" data-reveal>
-          <div class="t-photo"><div class="placeholder" data-label="Foto: Iluminado"></div></div>
-          <div class="t-text"><span class="eyebrow">Iluminado</span><p>Luz posicionada onde valoriza o rosto.</p></div>
+      <div class="results-strip" style="margin-top:var(--space-5)">
+        <div class="result-item" data-reveal>
+          <div class="result-photo">
+            <div class="half"><div class="placeholder" data-label="Antes"></div></div>
+            <div class="half"><div class="placeholder" data-label="Depois"></div></div>
+          </div>
+          <p class="result-caption">Loiro Iluminado</p>
         </div>
-        <div class="t-row" data-reveal>
-          <div class="t-photo"><div class="placeholder" data-label="Foto: Cabelo longo"></div></div>
-          <div class="t-text"><span class="eyebrow">Cabelo longo</span><p>Comprimento saudável, cor uniforme até as pontas.</p></div>
+        <div class="result-item" data-reveal>
+          <div class="result-photo">
+            <div class="half"><div class="placeholder" data-label="Antes"></div></div>
+            <div class="half"><div class="placeholder" data-label="Depois"></div></div>
+          </div>
+          <p class="result-caption">Total Blond</p>
         </div>
-      </div>
-      <div class="t-strip">
-        <div class="t-thumb" data-reveal><div class="placeholder" data-label="Mechas"></div></div>
-        <div class="t-thumb" data-reveal><div class="placeholder" data-label="Alisamento"></div></div>
-        <div class="t-thumb" data-reveal><div class="placeholder" data-label="Ambiente"></div></div>
-        <div class="t-thumb" data-reveal><div class="placeholder" data-label="Processo"></div></div>
+        <div class="result-item" data-reveal>
+          <div class="result-photo">
+            <div class="half"><div class="placeholder" data-label="Antes"></div></div>
+            <div class="half"><div class="placeholder" data-label="Depois"></div></div>
+          </div>
+          <p class="result-caption">Loiro Iluminado</p>
+        </div>
+        <div class="result-item" data-reveal>
+          <div class="result-photo">
+            <div class="half"><div class="placeholder" data-label="Antes"></div></div>
+            <div class="half"><div class="placeholder" data-label="Depois"></div></div>
+          </div>
+          <p class="result-caption">Total Blond</p>
+        </div>
       </div>
     </div>
   </section>
@@ -546,7 +533,7 @@
     <div class="wrap">
       <div class="section-head-row">
         <div class="section-head" style="margin-bottom:0">
-          <span class="eyebrow">Avaliações</span>
+          <span class="eyebrow">O que dizem minhas clientes</span>
           <h2>Confiança que se vê nos detalhes.</h2>
         </div>
         <span class="rating-summary"><span class="stars">★★★★★</span> <strong>5,0</strong> 33 avaliações no Facebook</span>
