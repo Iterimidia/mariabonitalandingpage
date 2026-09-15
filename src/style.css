@@ -265,7 +265,7 @@ p {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 38%) 1fr;
+  grid-template-columns: minmax(150px, 38%) 1fr;
   align-items: stretch;
   gap: clamp(10px, 4vw, 56px);
   aspect-ratio: 2.1 / 1;
@@ -286,10 +286,9 @@ p {
 .hero-title {
   font-family: var(--font-serif);
   font-weight: 500;
-  text-transform: uppercase;
-  font-size: clamp(1rem, 15cqw, 4.2rem);
-  line-height: 1.04;
-  letter-spacing: 0.005em;
+  font-size: clamp(0.85rem, 6.4cqw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: 0.002em;
 }
 
 .hero-lead {
