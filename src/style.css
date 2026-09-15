@@ -16,7 +16,7 @@
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
   --wrap: 1240px;
-  --gutter: clamp(24px, 5vw, 72px);
+  --gutter: clamp(24px, 6vw, 96px);
 }
 
 /* ---------------------------------------------------------
@@ -82,7 +82,7 @@ p {
   text-transform: uppercase;
   color: var(--wine);
   font-weight: 600;
-  margin-bottom: 14px;
+  margin-bottom: 22px;
 }
 
 .section-title {
@@ -150,16 +150,13 @@ p {
 .placeholder-photo::after {
   content: attr(data-placeholder-label);
   position: absolute;
-  inset: auto 16px 16px auto;
-  max-width: calc(100% - 32px);
+  inset: auto 14px 12px auto;
+  max-width: calc(100% - 28px);
   text-align: right;
   font-family: var(--font-sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.75);
-  background: rgba(58, 44, 34, 0.35);
-  padding: 4px 10px;
-  border-radius: 999px;
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 /* ---------------------------------------------------------
@@ -170,14 +167,13 @@ p {
   top: 0;
   z-index: 50;
   background: var(--cream);
-  border-bottom: 1px solid var(--line);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
-  gap: 32px;
-  padding-block: 20px;
+  gap: 40px;
+  padding-block: 26px;
 }
 
 .logo {
@@ -220,7 +216,7 @@ p {
 .main-nav {
   display: flex;
   gap: 32px;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
 }
 
 .main-nav a:hover {
@@ -264,34 +260,41 @@ p {
    Hero
 --------------------------------------------------------- */
 .hero {
-  padding-block-start: clamp(48px, 6vw, 88px);
+  padding-block: clamp(28px, 4vw, 44px) clamp(64px, 8vw, 112px);
 }
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(280px, 420px) 1fr;
-  align-items: center;
-  gap: clamp(32px, 5vw, 64px);
+  grid-template-columns: minmax(280px, 380px) 1fr;
+  align-items: start;
+  gap: clamp(40px, 7vw, 96px);
+}
+
+.hero-copy {
+  padding-top: clamp(24px, 5vw, 64px);
 }
 
 .hero-title {
-  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
-  line-height: 0.98;
-  letter-spacing: -0.01em;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: 0.005em;
 }
 
 .hero-lead {
-  margin-block: 26px 32px;
-  max-width: 34ch;
+  margin-block: 32px 36px;
+  max-width: 32ch;
   color: var(--ink-soft);
-  font-size: 1.02rem;
+  font-size: 1rem;
 }
 
 .hero-note {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-top: 48px;
+  margin-top: 56px;
 }
 
 .hero-note p {
@@ -303,24 +306,24 @@ p {
 }
 
 .hero-media {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-media-label {
+  align-self: flex-end;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: right;
+  line-height: 1.6;
 }
 
 .hero-photo {
   aspect-ratio: 3 / 4;
   width: 100%;
-}
-
-.hero-media-label {
-  position: absolute;
-  top: 28px;
-  right: -6px;
-  writing-mode: vertical-rl;
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  text-align: right;
 }
 
 /* ---------------------------------------------------------
