@@ -260,16 +260,16 @@ p {
    Hero
 --------------------------------------------------------- */
 .hero {
-  padding-block: clamp(20px, 3vw, 32px) clamp(24px, 4vw, 48px);
+  padding-block: clamp(12px, 3vw, 32px) clamp(12px, 4vw, 48px);
 }
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(320px, 520px) 1fr;
+  grid-template-columns: minmax(0, 38%) 1fr;
   align-items: stretch;
-  gap: clamp(24px, 4vw, 56px);
-  height: calc(100vh - 170px);
-  min-height: 560px;
+  gap: clamp(10px, 4vw, 56px);
+  height: calc(100svh - clamp(96px, 16vw, 170px));
+  min-height: 420px;
   max-height: 900px;
   width: 100%;
 }
@@ -279,35 +279,51 @@ p {
   flex-direction: column;
   justify-content: center;
   padding-left: var(--gutter);
-  padding-right: clamp(24px, 4vw, 48px);
+  padding-right: clamp(8px, 2vw, 48px);
+  min-width: 0;
 }
 
 .hero-title {
   font-family: var(--font-serif);
   font-weight: 500;
   text-transform: uppercase;
-  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
-  line-height: 1.02;
+  font-size: clamp(1.1rem, 6vw, 4.2rem);
+  line-height: 1.04;
   letter-spacing: 0.005em;
 }
 
 .hero-lead {
-  margin-block: 32px 36px;
+  margin-block: clamp(10px, 3vw, 32px) clamp(12px, 3.4vw, 36px);
   max-width: 32ch;
   color: var(--ink-soft);
-  font-size: 1rem;
+  font-size: clamp(0.68rem, 2vw, 1rem);
+  line-height: 1.5;
+}
+
+.hero-copy .btn {
+  padding: clamp(8px, 2.2vw, 15px) clamp(10px, 3.6vw, 28px);
+  font-size: clamp(0.56rem, 1.9vw, 0.9rem);
+  gap: clamp(4px, 1.6vw, 10px);
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.hero-copy .icon-whatsapp {
+  width: clamp(11px, 2.6vw, 16px);
+  height: clamp(11px, 2.6vw, 16px);
 }
 
 .hero-note {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 56px;
+  gap: clamp(8px, 2vw, 16px);
+  margin-top: clamp(14px, 4vw, 56px);
 }
 
 .hero-note p {
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  font-size: clamp(0.5rem, 1.6vw, 0.72rem);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-soft);
   line-height: 1.5;
@@ -316,20 +332,21 @@ p {
 .hero-media {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: clamp(6px, 1.5vw, 14px);
   height: 100%;
+  min-width: 0;
 }
 
 .hero-media-label {
   flex: 0 0 auto;
   align-self: flex-end;
   padding-right: var(--gutter);
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
+  font-size: clamp(0.48rem, 1.6vw, 0.7rem);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-soft);
   text-align: right;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .hero-photo {
@@ -624,38 +641,9 @@ p {
     display: none;
   }
 
-  .hero-inner,
   .about-inner,
   .results-inner {
     grid-template-columns: 1fr;
-  }
-
-  .hero-inner {
-    height: auto;
-    min-height: 0;
-    max-height: none;
-  }
-
-  .hero-copy {
-    padding-right: var(--gutter);
-  }
-
-  .hero-media {
-    order: -1;
-    height: auto;
-  }
-
-  .hero-media-label {
-    padding-right: var(--gutter);
-  }
-
-  .hero-photo {
-    aspect-ratio: 3 / 4;
-    flex: none;
-  }
-
-  .hero-photo::before {
-    content: none;
   }
 
   .about-photo {
