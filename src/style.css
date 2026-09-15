@@ -265,7 +265,7 @@ p {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(150px, 38%) 1fr;
+  grid-template-columns: minmax(175px, 40%) 1fr;
   align-items: stretch;
   gap: clamp(10px, 4vw, 56px);
   aspect-ratio: 2.1 / 1;
@@ -286,17 +286,10 @@ p {
 .hero-title {
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: clamp(0.85rem, 6.4cqw, 2.6rem);
-  line-height: 1.2;
+  font-size: clamp(0.95rem, 7.4cqw, 3.2rem);
+  line-height: 1.18;
   letter-spacing: 0.002em;
-}
-
-.hero-lead {
-  margin-block: clamp(8px, 7.2cqw, 32px) clamp(10px, 8cqw, 36px);
-  max-width: 32ch;
-  color: var(--ink-soft);
-  font-size: clamp(0.62rem, 3.6cqw, 1rem);
-  line-height: 1.5;
+  margin-bottom: clamp(16px, 9cqw, 40px);
 }
 
 .hero-copy .eyebrow {
