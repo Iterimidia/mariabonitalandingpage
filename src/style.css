@@ -538,17 +538,68 @@ p {
   aspect-ratio: 3 / 4;
 }
 
-.specialties-more {
-  margin-top: 28px;
-  font-size: 0.86rem;
-  color: var(--ink-soft);
+/* ---------------------------------------------------------
+   Procedures (secondary services)
+--------------------------------------------------------- */
+.procedures {
+  background: var(--cream-soft);
+  padding-block: clamp(64px, 8vw, 112px);
+}
+
+.procedures .section-title {
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+.procedures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.procedure-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 26px 20px;
+  text-align: center;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.procedure-card:hover {
+  border-color: var(--wine);
+  transform: translateY(-3px);
+}
+
+.procedure-card h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--wine);
+  border: 1px solid var(--wine);
+}
+
+.btn-outline:hover {
+  background: var(--wine);
+  color: var(--cream-soft);
+}
+
+.icon-instagram {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 /* ---------------------------------------------------------
    Results
 --------------------------------------------------------- */
 .results {
-  background: var(--cream-soft);
+  background: var(--cream);
   padding-block: clamp(72px, 9vw, 128px);
 }
 
@@ -621,6 +672,7 @@ p {
    Social proof
 --------------------------------------------------------- */
 .social-proof {
+  background: var(--cream-soft);
   padding-block: clamp(56px, 7vw, 88px);
 }
 
