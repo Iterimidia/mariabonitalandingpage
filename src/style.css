@@ -113,11 +113,13 @@ p {
   font-size: 0.9rem;
   font-weight: 600;
   white-space: nowrap;
-  transition: opacity 0.15s ease;
+  transition:
+    background-color 0.18s ease,
+    transform 0.15s ease;
 }
 
 .btn:hover {
-  opacity: 0.88;
+  transform: translateY(-1px);
 }
 
 .btn-primary {
@@ -125,9 +127,17 @@ p {
   color: var(--cream-soft);
 }
 
+.btn-primary:hover {
+  background: var(--wine-dark);
+}
+
 .btn-secondary {
   background: var(--cream);
   color: var(--wine-dark);
+}
+
+.btn-secondary:hover {
+  background: var(--cream-soft);
 }
 
 .icon-whatsapp {
@@ -151,6 +161,18 @@ p {
   position: relative;
   background: linear-gradient(155deg, #cabba9 0%, #9d8b78 55%, #7c6b5a 100%);
   overflow: hidden;
+}
+
+.placeholder-photo--b {
+  background: linear-gradient(135deg, #d3c6b4 0%, #a89681 55%, #86735f 100%);
+}
+
+.placeholder-photo--c {
+  background: linear-gradient(200deg, #c2ad95 0%, #93795f 55%, #6b5544 100%);
+}
+
+.placeholder-photo--d {
+  background: linear-gradient(115deg, #cfb9a8 0%, #a68d7c 55%, #7d6355 100%);
 }
 
 /* ---------------------------------------------------------
