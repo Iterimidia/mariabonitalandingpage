@@ -281,7 +281,7 @@ p {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(175px, 40%) 1fr;
+  grid-template-columns: minmax(0, clamp(40vw, 25vw + 95px, 55vw)) 1fr;
   align-items: stretch;
   gap: clamp(10px, 4vw, 56px);
   aspect-ratio: 2.1 / 1;
@@ -302,29 +302,29 @@ p {
 .hero-title {
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: clamp(1rem, 8.5cqw, 3.8rem);
+  font-size: clamp(0.6rem, 11cqw, 3.8rem);
   line-height: 1.16;
   letter-spacing: 0.002em;
-  margin-bottom: clamp(18px, 10cqw, 44px);
+  margin-bottom: clamp(10px, 10cqw, 44px);
 }
 
 .hero-copy .eyebrow {
-  font-size: clamp(0.48rem, 2.6cqw, 0.72rem);
-  margin-bottom: clamp(6px, 5cqw, 22px);
+  font-size: clamp(0.4rem, 4cqw, 0.72rem);
+  margin-bottom: clamp(4px, 5cqw, 22px);
 }
 
 .hero-copy .btn {
-  padding: clamp(6px, 2.6cqw, 11px) clamp(7px, 5cqw, 20px);
-  font-size: clamp(0.46rem, 2.5cqw, 0.72rem);
-  gap: clamp(3px, 1.8cqw, 8px);
+  padding: clamp(4px, 2cqw, 9px) clamp(5px, 4cqw, 16px);
+  font-size: clamp(0.36rem, 2cqw, 0.64rem);
+  gap: clamp(2px, 1.4cqw, 6px);
   white-space: normal;
   text-align: center;
   line-height: 1.25;
 }
 
 .hero-copy .icon-whatsapp {
-  width: clamp(9px, 2.8cqw, 13px);
-  height: clamp(9px, 2.8cqw, 13px);
+  width: clamp(6px, 2.2cqw, 11px);
+  height: clamp(6px, 2.2cqw, 11px);
 }
 
 .hero-note {
@@ -334,8 +334,13 @@ p {
   margin-top: clamp(10px, 12.5cqw, 56px);
 }
 
+.hero-note .rule {
+  width: clamp(14px, 8cqw, 40px);
+  flex-shrink: 0;
+}
+
 .hero-note p {
-  font-size: clamp(0.46rem, 2.6cqw, 0.72rem);
+  font-size: clamp(0.4rem, 2.4cqw, 0.72rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-soft);
@@ -343,31 +348,14 @@ p {
 }
 
 .hero-media {
-  container-type: inline-size;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(6px, 1.5vw, 14px);
   height: 100%;
   min-width: 0;
 }
 
-.hero-media-label {
-  flex: 0 0 auto;
-  align-self: flex-end;
-  padding-right: var(--gutter);
-  font-size: clamp(0.46rem, 2.2cqw, 0.7rem);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  text-align: right;
-  line-height: 1.5;
-}
-
 .hero-photo {
   position: relative;
-  flex: 1 1 auto;
   width: 100%;
-  min-height: 0;
+  height: 100%;
 }
 
 .hero-photo::before {
