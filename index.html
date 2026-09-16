@@ -21,10 +21,10 @@
     />
     <meta
       property="og:image"
-      content="https://mariabonitacabreuva.netlify.app/images/resultado-3.jpg"
+      content="https://mariabonitacabreuva.netlify.app/images/og-cover.jpg"
     />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="1600" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <link
       rel="icon"
@@ -121,6 +121,14 @@
               <img
                 class="about-photo"
                 src="/images/lu-sobre.webp"
+                srcset="
+                  /images/lu-sobre-480.webp  480w,
+                  /images/lu-sobre-800.webp  800w,
+                  /images/lu-sobre.webp     1254w
+                "
+                sizes="(max-width: 900px) 90vw, 420px"
+                loading="lazy"
+                decoding="async"
                 alt="Lu, especialista em loiros e iluminados, no salão Maria Bonita"
               />
             </div>
@@ -160,6 +168,14 @@
               <img
                 class="specialty-photo"
                 src="/images/total-blond.jpg"
+                srcset="
+                  /images/total-blond-480.jpg  480w,
+                  /images/total-blond-800.jpg  800w,
+                  /images/total-blond.jpg     1200w
+                "
+                sizes="(max-width: 900px) 100vw, 50vw"
+                loading="lazy"
+                decoding="async"
                 alt="Resultado de Total Blond, loiro uniforme"
               />
               <div class="specialty-copy">
@@ -172,6 +188,14 @@
               <img
                 class="specialty-photo"
                 src="/images/loiro-iluminado.jpg"
+                srcset="
+                  /images/loiro-iluminado-480.jpg  480w,
+                  /images/loiro-iluminado-800.jpg  800w,
+                  /images/loiro-iluminado.jpg     1200w
+                "
+                sizes="(max-width: 900px) 100vw, 50vw"
+                loading="lazy"
+                decoding="async"
                 alt="Resultado de Loiro Iluminado, com transição natural"
               />
               <div class="specialty-copy">
@@ -210,6 +234,14 @@
                 <img
                   class="result-photo"
                   src="/images/resultado-principal.jpg"
+                  srcset="
+                    /images/resultado-principal-480.jpg  480w,
+                    /images/resultado-principal-800.jpg  800w,
+                    /images/resultado-principal.jpg     1200w
+                  "
+                  sizes="(max-width: 900px) 50vw, 33vw"
+                  loading="lazy"
+                  decoding="async"
                   alt="Resultado de loiro iluminado, cabelo longo e ondulado"
                 />
               </div>
@@ -219,6 +251,14 @@
                 <img
                   class="result-photo"
                   src="/images/resultado-2.jpg"
+                  srcset="
+                    /images/resultado-2-480.jpg  480w,
+                    /images/resultado-2-800.jpg  800w,
+                    /images/resultado-2.jpg      896w
+                  "
+                  sizes="(max-width: 900px) 50vw, 33vw"
+                  loading="lazy"
+                  decoding="async"
                   alt="Resultado de loiro iluminado com raiz natural"
                 />
               </div>
@@ -228,6 +268,14 @@
                 <img
                   class="result-photo"
                   src="/images/resultado-3.jpg"
+                  srcset="
+                    /images/resultado-3-480.jpg  480w,
+                    /images/resultado-3-800.jpg  800w,
+                    /images/resultado-3.jpg     1200w
+                  "
+                  sizes="(max-width: 900px) 50vw, 33vw"
+                  loading="lazy"
+                  decoding="async"
                   alt="Resultado de loiro iluminado, cabelo longo e ondulado"
                 />
               </div>
@@ -237,6 +285,14 @@
                 <img
                   class="result-photo"
                   src="/images/resultado-4.jpg"
+                  srcset="
+                    /images/resultado-4-480.jpg  480w,
+                    /images/resultado-4-800.jpg  800w,
+                    /images/resultado-4.jpg     1200w
+                  "
+                  sizes="(max-width: 900px) 50vw, 33vw"
+                  loading="lazy"
+                  decoding="async"
                   alt="Resultado de balayage loiro em cabelo ondulado"
                 />
               </div>
@@ -246,6 +302,14 @@
                 <img
                   class="result-photo"
                   src="/images/resultado-5.jpg"
+                  srcset="
+                    /images/resultado-5-480.jpg  480w,
+                    /images/resultado-5-800.jpg  800w,
+                    /images/resultado-5.jpg     1200w
+                  "
+                  sizes="(max-width: 900px) 50vw, 33vw"
+                  loading="lazy"
+                  decoding="async"
                   alt="Resultado de iluminado natural, cabelo longo e liso"
                 />
               </div>
@@ -255,10 +319,38 @@
                 <img
                   class="result-photo"
                   src="/images/resultado-6.jpg"
+                  srcset="
+                    /images/resultado-6-480.jpg  480w,
+                    /images/resultado-6-800.jpg  800w,
+                    /images/resultado-6.jpg     1200w
+                  "
+                  sizes="(max-width: 900px) 50vw, 33vw"
+                  loading="lazy"
+                  decoding="async"
                   alt="Resultado de loiro iluminado com movimento e brilho"
                 />
               </div>
             </div>
+          </div>
+
+          <div class="results-cta">
+            <p>Gostou do que viu? Vamos planejar o seu próximo loiro.</p>
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/5511974205509"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" class="icon-whatsapp" aria-hidden="true">
+                <path
+                  d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.2-.5.1-.2 0-.3 0-.5-.1-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s1 2.5 1.1 2.6c.1.2 1.9 3 4.7 4.1.7.3 1.2.4 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"
+                />
+                <path
+                  d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.1 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.4-8.4 8.4z"
+                />
+              </svg>
+              Agendar no WhatsApp
+            </a>
           </div>
         </div>
       </section>
@@ -336,6 +428,25 @@
         <p class="copyright">© <span id="year"></span> Maria Bonita</p>
       </div>
     </footer>
+
+    <div class="mobile-cta-bar" id="mobile-cta-bar">
+      <a
+        class="btn btn-primary"
+        href="https://wa.me/5511974205509"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg viewBox="0 0 24 24" class="icon-whatsapp" aria-hidden="true">
+          <path
+            d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.2-.5.1-.2 0-.3 0-.5-.1-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s1 2.5 1.1 2.6c.1.2 1.9 3 4.7 4.1.7.3 1.2.4 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"
+          />
+          <path
+            d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.1 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.4-8.4 8.4z"
+          />
+        </svg>
+        Agendar no WhatsApp
+      </a>
+    </div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

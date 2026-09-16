@@ -17,3 +17,34 @@ const yearEl = document.querySelector<HTMLSpanElement>("#year");
 if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
 }
+
+const heroEl = document.querySelector<HTMLElement>("#inicio");
+const footerEl = document.querySelector<HTMLElement>("#contato");
+const mobileCtaBar = document.querySelector<HTMLElement>("#mobile-cta-bar");
+
+if (heroEl && footerEl && mobileCtaBar) {
+  let pastHero = false;
+  let inFooter = false;
+
+  const updateBarVisibility = () => {
+    mobileCtaBar.classList.toggle("is-visible", pastHero && !inFooter);
+  };
+
+  const heroObserver = new IntersectionObserver(
+    ([entry]) => {
+      pastHero = !entry.isIntersecting;
+      updateBarVisibility();
+    },
+    { threshold: 0 },
+  );
+  heroObserver.observe(heroEl);
+
+  const footerObserver = new IntersectionObserver(
+    ([entry]) => {
+      inFooter = entry.isIntersecting;
+      updateBarVisibility();
+    },
+    { threshold: 0.1 },
+  );
+  footerObserver.observe(footerEl);
+}
