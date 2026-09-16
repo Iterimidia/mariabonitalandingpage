@@ -278,18 +278,28 @@ p {
 .hero {
   position: relative;
   background-color: var(--cream);
-  background-image: linear-gradient(
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.05' numOctaves='2' seed='7' result='n'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='n' scale='46'/%3E%3C/filter%3E%3Cg filter='url(%23r)' fill='none' stroke-linecap='round'%3E%3Cpath d='M-100,150 C300,260 620,60 980,180 C1320,290 1520,120 1750,200' stroke='%23d9cab5' stroke-width='90' opacity='0.5'/%3E%3Cpath d='M-100,320 C350,200 550,440 950,340 C1300,260 1500,400 1750,320' stroke='%238c7a68' stroke-width='50' opacity='0.28'/%3E%3Cpath d='M-100,650 C300,500 500,750 900,600 C1300,450 1500,650 1750,550' stroke='%234a2a1f' stroke-width='64' opacity='0.22'/%3E%3Cpath d='M-100,480 C320,620 560,340 920,460 C1280,580 1520,380 1750,480' stroke='%234a2a1f' stroke-width='28' opacity='0.16'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(
       120deg,
       var(--cream) 0%,
       var(--cream-soft) 22%,
       #d9cab5 48%,
       var(--cream-soft) 74%,
       var(--cream) 100%
-    ),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    );
   background-size:
-    260% 260%,
-    240px 240px;
+    240px 240px,
+    1500px 840px,
+    260% 260%;
+  background-repeat:
+    repeat,
+    repeat-x,
+    no-repeat;
+  background-position:
+    0 0,
+    center 20%,
+    0% 40%;
   animation: hero-gradient 26s ease infinite;
   padding-block: clamp(96px, 16vw, 176px);
 }
@@ -297,18 +307,21 @@ p {
 @keyframes hero-gradient {
   0% {
     background-position:
-      0% 40%,
-      0 0;
+      0 0,
+      center 20%,
+      0% 40%;
   }
   50% {
     background-position:
-      100% 60%,
-      0 0;
+      0 0,
+      center 20%,
+      100% 60%;
   }
   100% {
     background-position:
-      0% 40%,
-      0 0;
+      0 0,
+      center 20%,
+      0% 40%;
   }
 }
 
