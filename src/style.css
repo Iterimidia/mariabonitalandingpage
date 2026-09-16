@@ -302,10 +302,10 @@ p {
 .hero-title {
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: clamp(0.95rem, 7.4cqw, 3.2rem);
-  line-height: 1.18;
+  font-size: clamp(1rem, 8.5cqw, 3.8rem);
+  line-height: 1.16;
   letter-spacing: 0.002em;
-  margin-bottom: clamp(16px, 9cqw, 40px);
+  margin-bottom: clamp(18px, 10cqw, 44px);
 }
 
 .hero-copy .eyebrow {
@@ -314,17 +314,17 @@ p {
 }
 
 .hero-copy .btn {
-  padding: clamp(7px, 3.4cqw, 15px) clamp(8px, 6.3cqw, 28px);
-  font-size: clamp(0.5rem, 3.2cqw, 0.9rem);
-  gap: clamp(4px, 2.2cqw, 10px);
+  padding: clamp(6px, 2.6cqw, 11px) clamp(7px, 5cqw, 20px);
+  font-size: clamp(0.46rem, 2.5cqw, 0.72rem);
+  gap: clamp(3px, 1.8cqw, 8px);
   white-space: normal;
   text-align: center;
   line-height: 1.25;
 }
 
 .hero-copy .icon-whatsapp {
-  width: clamp(10px, 3.6cqw, 16px);
-  height: clamp(10px, 3.6cqw, 16px);
+  width: clamp(9px, 2.8cqw, 13px);
+  height: clamp(9px, 2.8cqw, 13px);
 }
 
 .hero-note {
@@ -440,8 +440,8 @@ p {
 
 .specialties-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
 }
 
 .specialty {
@@ -473,35 +473,22 @@ p {
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
-  padding: 24px;
+  padding: 32px;
 }
 
 .specialty h3 {
-  font-size: 1.3rem;
-  margin-bottom: 6px;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
 }
 
 .specialty p {
-  font-size: 0.86rem;
-  max-width: 26ch;
+  font-size: 0.95rem;
+  max-width: 30ch;
   color: rgba(248, 243, 233, 0.88);
 }
 
 .specialty-primary {
   aspect-ratio: 3 / 4;
-}
-
-.specialty-secondary {
-  aspect-ratio: 16 / 9;
-  align-self: end;
-}
-
-.specialty-secondary h3 {
-  font-size: 1.1rem;
-}
-
-.specialty-secondary p {
-  font-size: 0.8rem;
 }
 
 .specialties-more {
@@ -689,10 +676,6 @@ p {
 
   .specialty-primary {
     aspect-ratio: 16 / 10;
-  }
-
-  .specialty-secondary {
-    aspect-ratio: 16 / 7;
   }
 
   .results-media {
