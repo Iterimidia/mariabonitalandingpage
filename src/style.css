@@ -284,9 +284,9 @@ p {
   grid-template-columns: minmax(0, clamp(40vw, 25vw + 95px, 55vw)) 1fr;
   align-items: stretch;
   gap: clamp(10px, 4vw, 56px);
-  aspect-ratio: 1.45 / 1;
+  aspect-ratio: 2.1 / 1;
   width: 100%;
-  max-height: 900px;
+  max-height: 820px;
 }
 
 .hero-copy {
@@ -302,7 +302,7 @@ p {
 .hero-title {
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: clamp(0.6rem, 11cqw, 3.8rem);
+  font-size: clamp(0.6rem, 8cqw, 3rem);
   line-height: 1.16;
   letter-spacing: 0.002em;
   margin-bottom: clamp(10px, 10cqw, 44px);
