@@ -232,7 +232,7 @@ p {
 .header-inner {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 28px;
   padding-block: 26px;
 }
 
@@ -264,6 +264,7 @@ p {
 .logo-name {
   font-family: var(--font-serif);
   font-size: 1.05rem;
+  white-space: nowrap;
 }
 
 .logo-sub {
@@ -275,8 +276,13 @@ p {
 
 .main-nav {
   display: flex;
-  gap: 32px;
-  font-size: 0.88rem;
+  gap: 22px;
+  font-size: 0.86rem;
+  flex-shrink: 0;
+}
+
+.header-cta {
+  flex-shrink: 0;
 }
 
 .main-nav a {
@@ -311,6 +317,7 @@ p {
   background: none;
   cursor: pointer;
   position: relative;
+  flex-shrink: 0;
 }
 
 .nav-toggle span,
@@ -553,28 +560,48 @@ p {
 
 .procedures-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
 }
 
 .procedure-card {
   border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 26px 20px;
+  border-radius: 14px;
+  padding: clamp(36px, 4vw, 56px) 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
   text-align: center;
+  min-height: 180px;
+  min-width: 0;
   transition:
     border-color 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .procedure-card:hover {
   border-color: var(--wine);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px -18px rgba(58, 34, 20, 0.28);
+}
+
+.procedure-card-wide {
+  grid-column: span 2;
+}
+
+.procedure-index {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--taupe);
 }
 
 .procedure-card h3 {
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   font-weight: 500;
 }
 
@@ -596,10 +623,54 @@ p {
 }
 
 /* ---------------------------------------------------------
+   Our space
+--------------------------------------------------------- */
+.our-space {
+  background: var(--cream);
+  padding-block: clamp(64px, 9vw, 128px);
+}
+
+.our-space-inner {
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 300px);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+.our-space-lead {
+  margin-top: 22px;
+  max-width: 42ch;
+  color: var(--ink-soft);
+}
+
+.our-space-frame {
+  aspect-ratio: 9 / 16;
+  max-width: 300px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.video-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.video-placeholder-label {
+  padding: 0 24px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(248, 243, 233, 0.8);
+}
+
+/* ---------------------------------------------------------
    Results
 --------------------------------------------------------- */
 .results {
-  background: var(--cream);
+  background: var(--cream-soft);
   padding-block: clamp(72px, 9vw, 128px);
 }
 
@@ -672,7 +743,7 @@ p {
    Social proof
 --------------------------------------------------------- */
 .social-proof {
-  background: var(--cream-soft);
+  background: var(--cream);
   padding-block: clamp(56px, 7vw, 88px);
 }
 
@@ -757,7 +828,7 @@ p {
 /* ---------------------------------------------------------
    Responsive
 --------------------------------------------------------- */
-@media (max-width: 900px) {
+@media (max-width: 1140px) {
   .main-nav {
     position: fixed;
     inset: 73px 0 auto 0;
@@ -791,9 +862,12 @@ p {
   .header-cta {
     display: none;
   }
+}
 
+@media (max-width: 900px) {
   .about-inner,
-  .results-inner {
+  .results-inner,
+  .our-space-inner {
     grid-template-columns: 1fr;
   }
 
@@ -812,6 +886,19 @@ p {
 
   .specialty-primary {
     aspect-ratio: 16 / 10;
+  }
+
+  .procedures-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .procedure-card-wide {
+    grid-column: span 2;
+  }
+
+  .our-space-frame {
+    max-width: 280px;
+    margin-inline: auto;
   }
 
   .results-media {
