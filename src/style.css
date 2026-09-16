@@ -151,6 +151,50 @@ p {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.google-info:hover .icon-google {
+  transform: scale(1.08);
+}
+
+/* ---------------------------------------------------------
+   Framed photography
+--------------------------------------------------------- */
+.photo-frame {
+  background: var(--cream-soft);
+  padding: 10px;
+  border-radius: 14px;
+  box-shadow:
+    0 22px 44px -18px rgba(58, 34, 20, 0.32),
+    0 6px 16px -8px rgba(58, 34, 20, 0.14);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.photo-frame:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 54px -18px rgba(58, 34, 20, 0.38),
+    0 10px 20px -8px rgba(58, 34, 20, 0.18);
+}
+
+.frame-clip {
+  overflow: hidden;
+  border-radius: 8px;
+  height: 100%;
+}
+
+.frame-clip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.photo-frame:hover .frame-clip img {
+  transform: scale(1.045);
 }
 
 /* ---------------------------------------------------------
@@ -235,8 +279,28 @@ p {
   font-size: 0.88rem;
 }
 
+.main-nav a {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 4px;
+  height: 1px;
+  background: var(--wine);
+  transition: right 0.25s ease;
+}
+
 .main-nav a:hover {
   color: var(--wine);
+}
+
+.main-nav a:hover::after {
+  right: 0;
 }
 
 .nav-toggle {
@@ -279,9 +343,29 @@ p {
   position: relative;
   background-color: var(--cream);
   padding-block: clamp(96px, 16vw, 176px);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(244, 238, 226, 0.6) 0%,
+      rgba(244, 238, 226, 0.78) 55%,
+      rgba(244, 238, 226, 0.92) 100%
+    ),
+    url("/images/hero-bg.webp");
+  background-size: cover;
+  background-position: 78% 35%;
+  z-index: 0;
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: 900px;
   margin-inline: auto;
   display: flex;
@@ -336,10 +420,12 @@ p {
   align-items: center;
 }
 
-.about-photo {
+.about-photo-frame {
   aspect-ratio: 4 / 5;
   width: 100%;
-  object-fit: cover;
+}
+
+.about-photo {
   object-position: 50% 20%;
 }
 
@@ -390,6 +476,20 @@ p {
   position: relative;
   overflow: hidden;
   color: var(--cream-soft);
+  border-radius: 14px;
+  box-shadow:
+    0 22px 44px -18px rgba(58, 34, 20, 0.32),
+    0 6px 16px -8px rgba(58, 34, 20, 0.14);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.specialty:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 54px -18px rgba(58, 34, 20, 0.38),
+    0 10px 20px -8px rgba(58, 34, 20, 0.18);
 }
 
 .specialty-photo {
@@ -398,6 +498,11 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.specialty:hover .specialty-photo {
+  transform: scale(1.045);
 }
 
 .specialty::after {
@@ -469,25 +574,30 @@ p {
   font-weight: 600;
   border-bottom: 1px solid var(--ink);
   padding-bottom: 2px;
+  transition:
+    gap 0.25s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.text-link span {
+  transition: transform 0.25s ease;
+}
+
+.text-link:hover {
+  gap: 13px;
+  color: var(--wine);
+  border-color: var(--wine);
 }
 
 .results-media {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  grid-template-rows: repeat(2, minmax(200px, 1fr));
-  gap: 20px;
-  height: clamp(440px, 44vw, 640px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.4vw, 32px);
 }
 
-.result-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.result-photo-main {
-  grid-row: 1 / span 2;
+.result-photo-frame {
+  aspect-ratio: 3 / 4;
 }
 
 /* ---------------------------------------------------------
@@ -514,6 +624,7 @@ p {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--ink);
+  transition: color 0.2s ease;
 }
 
 .google-info:hover .google-info-text {
@@ -551,6 +662,10 @@ p {
   justify-content: center;
   font-size: 0.92rem;
   color: rgba(248, 243, 233, 0.85);
+}
+
+.cta-final-info a {
+  transition: color 0.2s ease;
 }
 
 .cta-final-info a:hover {
@@ -606,7 +721,7 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .about-photo {
+  .about-photo-frame {
     aspect-ratio: 16 / 10;
   }
 
@@ -624,20 +739,8 @@ p {
   }
 
   .results-media {
-    height: auto;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 14px;
-  }
-
-  .result-photo-main {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    aspect-ratio: 4 / 5;
-  }
-
-  .result-photo-small {
-    aspect-ratio: 3 / 4;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
   .cta-final-inner {
