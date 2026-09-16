@@ -446,11 +446,34 @@ p {
 
 .specialty {
   position: relative;
+  overflow: hidden;
+  color: var(--cream-soft);
+}
+
+.specialty-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.specialty::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 12, 8, 0) 45%, rgba(20, 12, 8, 0.68) 100%);
+  pointer-events: none;
+}
+
+.specialty-copy {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  height: 100%;
   padding: 24px;
-  color: var(--cream-soft);
 }
 
 .specialty h3 {
@@ -522,6 +545,13 @@ p {
   grid-template-rows: repeat(2, minmax(140px, 1fr));
   gap: 16px;
   height: clamp(340px, 40vw, 420px);
+}
+
+.result-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .result-photo-main {
