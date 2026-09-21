@@ -547,7 +547,7 @@ p {
 }
 
 .procedure-card {
-  background: var(--cream);
+  background: linear-gradient(155deg, #ece1d1 0%, #ddc9ae 100%);
   border-radius: 14px;
   padding: clamp(40px, 4.5vw, 60px) 28px;
   display: flex;
@@ -578,19 +578,23 @@ p {
 }
 
 .procedure-index {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--wine);
+  color: var(--cream-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-serif);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  color: var(--taupe);
-}
-
-.procedure-card .rule {
-  margin-inline: auto;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
 }
 
 .procedure-card h3 {
   font-size: 1.35rem;
   font-weight: 500;
+  color: var(--wine-dark);
 }
 
 .btn-outline {
