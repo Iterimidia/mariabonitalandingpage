@@ -48,3 +48,31 @@ if (heroEl && footerEl && mobileCtaBar) {
   );
   footerObserver.observe(footerEl);
 }
+
+const ourSpaceVideo = document.querySelector<HTMLVideoElement>(".our-space-video");
+
+if (ourSpaceVideo) {
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  const videoObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) return;
+
+      ourSpaceVideo
+        .querySelectorAll<HTMLSourceElement>("source[data-src]")
+        .forEach((source) => {
+          source.src = source.dataset.src ?? "";
+          source.removeAttribute("data-src");
+        });
+      ourSpaceVideo.load();
+      if (!prefersReducedMotion) {
+        ourSpaceVideo.play().catch(() => {});
+      }
+      videoObserver.disconnect();
+    },
+    { threshold: 0.25 },
+  );
+  videoObserver.observe(ourSpaceVideo);
+}

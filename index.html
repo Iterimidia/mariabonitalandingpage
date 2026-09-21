@@ -275,16 +275,17 @@
 
           <div class="photo-frame our-space-frame">
             <div class="frame-clip">
-              <!--
-                Vídeo vertical (9:16) em produção pela equipe criativa.
-                Quando o arquivo estiver pronto, substituir o bloco abaixo por:
-                <video class="our-space-video" autoplay muted loop playsinline>
-                  <source src="/videos/nosso-espaco.mp4" type="video/mp4" />
-                </video>
-              -->
-              <div class="video-placeholder placeholder-photo placeholder-photo--b">
-                <span class="video-placeholder-label">Vídeo em produção</span>
-              </div>
+              <video
+                class="our-space-video"
+                muted
+                loop
+                playsinline
+                preload="none"
+                poster="/images/nosso-espaco-poster.jpg"
+                aria-label="Vídeo do espaço do salão Maria Bonita"
+              >
+                <source data-src="/videos/nosso-espaco.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
