@@ -49,30 +49,35 @@ if (heroEl && footerEl && mobileCtaBar) {
   footerObserver.observe(footerEl);
 }
 
+const ourSpaceSection = document.querySelector<HTMLElement>("#nosso-espaco");
 const ourSpaceVideo = document.querySelector<HTMLVideoElement>(".our-space-video");
 
-if (ourSpaceVideo) {
+if (ourSpaceSection && ourSpaceVideo) {
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
 
   const videoObserver = new IntersectionObserver(
     ([entry]) => {
-      if (!entry.isIntersecting) return;
-
-      ourSpaceVideo
-        .querySelectorAll<HTMLSourceElement>("source[data-src]")
-        .forEach((source) => {
-          source.src = source.dataset.src ?? "";
-          source.removeAttribute("data-src");
-        });
-      ourSpaceVideo.load();
-      if (!prefersReducedMotion) {
-        ourSpaceVideo.play().catch(() => {});
+      if (entry.isIntersecting) {
+        const pendingSources = ourSpaceVideo.querySelectorAll<HTMLSourceElement>(
+          "source[data-src]",
+        );
+        if (pendingSources.length > 0) {
+          pendingSources.forEach((source) => {
+            source.src = source.dataset.src ?? "";
+            source.removeAttribute("data-src");
+          });
+          ourSpaceVideo.load();
+        }
+        if (!prefersReducedMotion) {
+          ourSpaceVideo.play().catch(() => {});
+        }
+      } else if (ourSpaceVideo.currentSrc) {
+        ourSpaceVideo.pause();
       }
-      videoObserver.disconnect();
     },
-    { threshold: 0.25 },
+    { threshold: 0.5 },
   );
-  videoObserver.observe(ourSpaceVideo);
+  videoObserver.observe(ourSpaceSection);
 }
